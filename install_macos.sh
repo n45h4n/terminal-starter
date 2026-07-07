@@ -49,7 +49,12 @@ install_packages() {
     bat \
     fd \
     ripgrep \
-    tldr
+    tldr \
+    neovim \
+    lazygit \
+    yazi \
+    jq \
+    tree
 }
 
 next_backup_path() {
@@ -109,17 +114,7 @@ install_configs() {
 }
 
 print_next_steps() {
-  local zsh_path
-  local shell_note=""
-
-  if [ -x "/bin/zsh" ]; then
-    zsh_path="/bin/zsh"
-  else
-    zsh_path="$(command -v zsh || true)"
-    shell_note="If this path is not listed in /etc/shells, add it there before running chsh."
-  fi
-
-  cat <<EOF
+  cat <<'EOF'
 
 Done.
 
@@ -128,8 +123,7 @@ Open a new terminal window, or run:
 
 This script did not change your login shell automatically.
 If zsh is not your login shell yet, you can run:
-  chsh -s $zsh_path
-$shell_note
+  chsh -s "$(command -v zsh)"
 
 EOF
 }

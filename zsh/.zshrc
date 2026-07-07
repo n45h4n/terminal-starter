@@ -62,6 +62,9 @@ if command -v fzf >/dev/null 2>&1; then
   elif [ -f "/usr/local/opt/fzf/shell/key-bindings.zsh" ]; then
     source "/usr/local/opt/fzf/shell/key-bindings.zsh"
     [ -f "/usr/local/opt/fzf/shell/completion.zsh" ] && source "/usr/local/opt/fzf/shell/completion.zsh"
+  elif [ -f "/usr/share/fzf/key-bindings.zsh" ]; then
+    source "/usr/share/fzf/key-bindings.zsh"
+    [ -f "/usr/share/fzf/completion.zsh" ] && source "/usr/share/fzf/completion.zsh"
   elif [ -f "/usr/share/doc/fzf/examples/key-bindings.zsh" ]; then
     source "/usr/share/doc/fzf/examples/key-bindings.zsh"
     [ -f "/usr/share/doc/fzf/examples/completion.zsh" ] && source "/usr/share/doc/fzf/examples/completion.zsh"
@@ -78,6 +81,8 @@ if [ -f "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; the
   source "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 elif [ -f "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
   source "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+elif [ -f "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+  source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 elif [ -f "/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
   source "/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
@@ -87,6 +92,8 @@ if [ -f "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   source "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 elif [ -f "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
   source "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+elif [ -f "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+  source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 elif [ -f "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
   source "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi

@@ -21,7 +21,13 @@ install_core_packages() {
     git \
     wget \
     ca-certificates \
-    zsh
+    zsh \
+    less \
+    tree \
+    jq \
+    zip \
+    unzip \
+    neovim
 }
 
 try_apt_install() {
@@ -47,6 +53,8 @@ install_optional_apt_packages() {
   try_apt_install tldr
   try_apt_install starship
   try_apt_install zoxide
+  try_apt_install lazygit
+  try_apt_install yazi
 }
 
 ensure_local_bin() {
@@ -153,10 +161,7 @@ install_configs() {
 }
 
 print_next_steps() {
-  local zsh_path
-  zsh_path="$(command -v zsh || true)"
-
-  cat <<EOF
+  cat <<'EOF'
 
 Done.
 
@@ -165,7 +170,7 @@ Open a new terminal window, or run:
 
 This script did not change your login shell automatically.
 If zsh is not your login shell yet, you can run:
-  chsh -s $zsh_path
+  chsh -s "$(command -v zsh)"
 
 EOF
 }
