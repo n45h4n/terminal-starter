@@ -49,7 +49,6 @@ install_packages() {
     bat \
     fd \
     ripgrep \
-    tldr \
     neovim \
     lazygit \
     yazi \
